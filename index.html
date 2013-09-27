@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var options = {
+				"notallowed": ["quote", "quotation"]
+			}
+			
+			function validateText(text, options) {
+				errors = "";
+				
+				for (var i=0; i<options.notallowed.length; i++) {
+					if (text.indexOf(options.notallowed[i]) != -1) errors.push([text.indexOf(options.notallowed[i]), "The word "+options.notallowed[i]+" is not allowed");
+				}
+				
+				alert(errors);
+			}
+		</script>
+	</head>
+	<body>
+		<textarea id="textarea">
+		</textarea>
+		<button onclick="validateText(document.getElementById('textarea', options)">Hello</button>
+	</body>
+</html>
