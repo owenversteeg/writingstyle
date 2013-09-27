@@ -7,7 +7,7 @@
 			}
 			
 			function validateText(text, options) {
-				errors = "";
+				errors = [];
 				
 				for (var i=0; i<options.notallowed.length; i++) {
 					if (text.indexOf(options.notallowed[i]) != -1) errors.push([text.indexOf(options.notallowed[i]), "The word "+options.notallowed[i]+" is not allowed"]);
