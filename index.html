@@ -110,7 +110,7 @@
 			<div id="insert"></div>
 		</div>
 		<script>
-			textarea.onkeypress = function() { validateText(document.getElementById("textarea").value, options, false); }
+			textarea.onkeyup = function() { validateText(document.getElementById("textarea").value, options, false); }
 			//this automatically calculates as you type
 		</script>
 	</body>
