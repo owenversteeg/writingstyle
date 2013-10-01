@@ -35,25 +35,8 @@
 			}
 
 			var options = {
-				"notallowed": ["quote", "quotation", "n't", "'s", "n't", "n't", "n't", "'ve", "really", "very", "greatly", "terribly", "sort of", "kind of", "I", "you"]
+				"notallowed": ["quote", "quotation", "n't ", "'s ", "'ve ", "really", "very", "greatly", "terribly", " sort of ", " kind of ", " i ", " you"]
 			}
-			
-			mna = [];
-				
-			for (var i=0; i<options.notallowed.length; i++) {
-				//ensure that they're lowercase
-				options.notallowed[i] = options.notallowed[i].toLowerCase();
-			
-				//ensure that this word is not part of another word
-				options.notallowed[i] = ' ' + options.notallowed[i] + ' ';
-				mna.push(' '+options.notallowed[i]+'.')
-				mna.push(' '+options.notallowed[i]+';')
-				mna.push(' '+options.notallowed[i]+'!')
-				mna.push(' '+options.notallowed[i]+'?')
-				mna.push(' '+options.notallowed[i]+',')
-			}
-				
-			options.notallowed = options.notallowed.concat(mna);
 			
 			function validateText(text, options, shouldLog) {
 				text = text.toLowerCase();
