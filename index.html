@@ -44,7 +44,7 @@
 				stats = "Counting quotations, your essay is:<br>";
 
 				var wordswithquotes = text.replace("/", " ").replace("&", "and").split(' ').clean('').length;
-				var charswithquotes = text.length;
+				var charswithquotes = text.length-2; //because of the extra 2 spaces
 
 				stats += wordswithquotes + " words<br>";
 				stats += charswithquotes + " characters<br><br>";
