@@ -43,14 +43,14 @@
 			for (var i=0; i<options.notallowed.length; i++) {
 				//ensure that they're lowercase
 				options.notallowed[i] = options.notallowed[i].toLowerCase();
-				
+			
+				//ensure that this word is not part of another word
 				options.notallowed[i] = ' ' + options.notallowed[i] + ' ';
 				mna.push(' '+options.notallowed[i]+'.')
 				mna.push(' '+options.notallowed[i]+';')
 				mna.push(' '+options.notallowed[i]+'!')
 				mna.push(' '+options.notallowed[i]+'?')
 				mna.push(' '+options.notallowed[i]+',')
-				//ensure that this word is not part of another word
 			}
 				
 			options.notallowed = options.notallowed.concat(mna);
