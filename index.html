@@ -38,20 +38,22 @@
 				"notallowed": ["quote", "quotation", "n't", "'s", "n't", "n't", "n't", "'ve", "really", "very", "greatly", "terribly", "sort of", "kind of", "I", "you"]
 			}
 			
+			mna = [];
+				
+			for (var i=0; i<options.notallowed.length; i++) {
+				options.notallowed[i] = ' ' + options.notallowed[i] + ' ';
+				mna.push(' '+options.notallowed[i]+'.')
+				mna.push(' '+options.notallowed[i]+';')
+				mna.push(' '+options.notallowed[i]+'!')
+				mna.push(' '+options.notallowed[i]+'?')
+				mna.push(' '+options.notallowed[i]+',')
+				//ensure that this word is not part of another word
+			}
+				
+			options.notallowed = options.notallowed.concat(mna);
+			
 			function validateText(text, options, shouldLog) {
-				mna = [];
-				
-				for (var i=0; i<options.notallowed.length; i++) {
-					options.notallowed[i] = ' ' + options.notallowed[i] + ' ';
-					mna.push(' '+options.notallowed[i]+'.')
-					mna.push(' '+options.notallowed[i]+';')
-					mna.push(' '+options.notallowed[i]+'!')
-					mna.push(' '+options.notallowed[i]+'?')
-					mna.push(' '+options.notallowed[i]+',')
-					//ensure that this word is not part of another word
-				}
-				
-				options.notallowed = options.notallowed.concat(mna);
+
 				
 				stats = "Counting quotations, your essay is:<br>";
 
