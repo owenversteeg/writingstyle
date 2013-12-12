@@ -61,6 +61,12 @@
 				"notallowed": ["quote", "quotation", "n't ", "it's ", "she's", "he's", "'ve ", "really", "very", "greatly", "terribly", " sort of ", " kind of ", " i ", " you", "at that time", "in those days"]
 			}
 			
+			function removeFirstAndLastSpaces(text) {
+				if (text.indexOf(' ') == 0) text = text.substr(1);
+				if (text.lastIndexOf(' ') == text.length-1) text = text.substr(0,text.length-1)
+				return text;
+			}
+			
 			function validateText(text, options, shouldLog) {
 				text = replaceWordChars(text);
 				
@@ -94,7 +100,7 @@
 				for (var i=0; i<options.notallowed.length; i++) {
 					var textToAdd = " ";
 					if (getIndicesOf(options.notallowed[i], text, false).length > 1) textToAdd = "s "
-					if (text.indexOf(options.notallowed[i]) != -1) errors.push("At character"+textToAdd+getIndicesOf(options.notallowed[i], text, false)+ " you wrote \""+options.notallowed[i]+"\", which is not allowed.");
+					if (text.indexOf(options.notallowed[i]) != -1) errors.push("At character"+textToAdd+getIndicesOf(options.notallowed[i], text, false)+ " you wrote \""+removeFirstSpace(options.notallowed[i])+"\", which is not allowed.");
 				}
 
 				var returnedHTML = '<br>';
