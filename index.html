@@ -92,7 +92,9 @@
 				errors = [];
 
 				for (var i=0; i<options.notallowed.length; i++) {
-					if (text.indexOf(options.notallowed[i]) != -1) errors.push("At character(s) "+getIndicesOf(options.notallowed[i], text, false)+ " you wrote the word "+options.notallowed[i]+", which is not allowed.");
+					var textToAdd = " ";
+					if (getIndicesOf(options.notallowed[i], text, false).length > 1) textToAdd = "s "
+					if (text.indexOf(options.notallowed[i]) != -1) errors.push("At character"+textToAdd+getIndicesOf(options.notallowed[i], text, false)+ " you wrote \""+options.notallowed[i]+"\", which is not allowed.");
 				}
 
 				var returnedHTML = '<br>';
