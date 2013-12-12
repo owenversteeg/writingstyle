@@ -100,7 +100,7 @@
 				for (var i=0; i<options.notallowed.length; i++) {
 					var textToAdd = " ";
 					if (getIndicesOf(options.notallowed[i], text, false).length > 1) textToAdd = "s "
-					if (text.indexOf(options.notallowed[i]) != -1) errors.push("At character"+textToAdd+getIndicesOf(options.notallowed[i], text, false)+ " you wrote \""+removeFirstSpace(options.notallowed[i])+"\", which is not allowed.");
+					if (text.indexOf(options.notallowed[i]) != -1) errors.push("At character"+textToAdd+getIndicesOf(options.notallowed[i], text, false)+ " you wrote \""+removeFirstAndLastSpaces(options.notallowed[i])+"\", which is not allowed.");
 				}
 
 				var returnedHTML = '<br>';
