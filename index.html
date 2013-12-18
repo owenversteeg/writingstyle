@@ -7,6 +7,7 @@
 		b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
 		mixpanel.init("1562bc33430c102b02d03475f0486b0f");</script>
 		<!-- end Mixpanel -->
+		 <script src="insults.js" type="text/javascript"></script>
 		<script>
 		
 			// Replaces commonly-used Windows 1252 encoded chars that do not exist in ASCII or ISO-8859-1 with ISO-8859-1 cognates.
@@ -100,14 +101,18 @@
 				for (var i=0; i<options.notallowed.length; i++) {
 					var textToAdd = " ";
 					if (getIndicesOf(options.notallowed[i], text, false).length > 1) textToAdd = "s "
-					if (text.indexOf(options.notallowed[i]) != -1) errors.push("At character"+textToAdd+getIndicesOf(options.notallowed[i], text, false)+ " you wrote \""+removeFirstAndLastSpaces(options.notallowed[i])+"\", which is not allowed.");
+					if (text.indexOf(options.notallowed[i]) != -1) errors.push("At character"+textToAdd+getIndicesOf(options.notallowed[i], text, false)+ " you wrote \""+removeFirstAndLastSpaces(options.notallowed[i])+"\", which is a banned word!.");
 				}
 
 				var returnedHTML = '<br>';
 				returnedHTML += "<message><strong>Essay Stats</strong><br><br>"+stats+"</message><br>";
 
+				headingText = "Error";
+
+				if (giveinsults.checked == true) headingText = "You "+insults.column1[Math.round(Math.random()*10)]+", "+insults.column2[Math.round(Math.random()*10)]+" "+insults.column3[Math.round(Math.random()*10)]+"!"
+
 				for (var i=0; i<errors.length; i++) {
-					returnedHTML += "<message class='warning'><strong>Error</strong><br><br>"+errors[i]+"</message><br>";
+					returnedHTML += "<message class='warning'><strong>"+headingText+"</strong><br><br></message><br>";
 				}
 				document.getElementById('insert').innerHTML = returnedHTML;
 				totals++;
@@ -136,6 +141,8 @@
 	</head>
 	<body>
 		<div class="navbar"><a class="pagename" href="#">Writing Style Checker</a> <a class="navbar-link" href="me@owenversteeg.com">Contact</a><a class="navbar-link" href="http://github.com/owenversteeg/writingstyle">GitHub</a></div>
+		<br>
+		<checkbox id="giveinsults">Give Insults</checkbox>
 		<br>
 		<div class="mediumwidth">
 			<textarea id="textarea" placeholder="Enter your essay here"></textarea>
