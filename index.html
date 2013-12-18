@@ -112,7 +112,7 @@
 				if (giveinsults.checked == true) headingText = "You "+insults.column1[Math.round(Math.random()*10)]+", "+insults.column2[Math.round(Math.random()*10)]+" "+insults.column3[Math.round(Math.random()*10)]+"!"
 
 				for (var i=0; i<errors.length; i++) {
-					returnedHTML += "<message class='warning'><strong>"+headingText+"</strong><br><br>"+textToAdd+"</message><br>";
+					returnedHTML += "<message class='warning'><strong>"+headingText+"</strong><br><br>"+errors[i+"</message><br>";
 				}
 				document.getElementById('insert').innerHTML = returnedHTML;
 				totals++;
@@ -144,7 +144,7 @@
 		<br>
 		<div class="mediumwidth">
 			<input type="checkbox" id="giveinsults" value="Give Insults"> Give Insults
-			<br>
+			<br><br>
 			<textarea id="textarea" placeholder="Enter your essay here"></textarea>
 			<br>
 			<button class="btn-a btn-small left" onclick="validateText(document.getElementById(&#39;textarea&#39;).value, options)">Check your essay</button>
