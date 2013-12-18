@@ -53,7 +53,8 @@
 					searchStr = searchStr.toLowerCase();
 				}
 				while ((index = str.indexOf(searchStr, startIndex)) > -1) {
-					indices.push(index);
+					if (searchStr.indexOf(' ') == 0) { indices.push(index); }
+					else { indices.push(index-1); }
 					startIndex = index + searchStrLen;
 				}
 				return indices;
