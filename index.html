@@ -132,7 +132,7 @@
 			function formatCharacterPositions(charPositionsArray, bannedTextLength) {
 				for (var i=0; i<charPositionsArray.length; i++) {
 					charPositionsArray[i] = "<a onclick='setSelectionRange(document.getElementById(\"textarea\"), "+charPositionsArray[i]+", "+charPositionsArray[i]+bannedTextLength+")'>"+charPositionsArray[i]+"</a>"
-					if (i+1 == charPositionsArray.length) charPositionsArray[i] = "and " + charPositionsArray[i];
+					if (i+1 == charPositionsArray.length){ charPositionsArray[i] = "and " + charPositionsArray[i]; }
 				}
 				return charPositionsArray.toString().replace(/,/g, ", ");
 			}
