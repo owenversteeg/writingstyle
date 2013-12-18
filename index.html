@@ -107,12 +107,12 @@
 				var returnedHTML = '<br>';
 				returnedHTML += "<message><strong>Essay Stats</strong><br><br>"+stats+"</message><br>";
 
-				headingText = "Error";
+				var headingText = "Error";
 
 				if (giveinsults.checked == true) headingText = "You "+insults.column1[Math.round(Math.random()*10)]+", "+insults.column2[Math.round(Math.random()*10)]+" "+insults.column3[Math.round(Math.random()*10)]+"!"
 
 				for (var i=0; i<errors.length; i++) {
-					returnedHTML += "<message class='warning'><strong>"+headingText+"</strong><br><br></message><br>";
+					returnedHTML += "<message class='warning'><strong>"+headingText+"</strong><br><br>"+textToAdd+"</message><br>";
 				}
 				document.getElementById('insert').innerHTML = returnedHTML;
 				totals++;
