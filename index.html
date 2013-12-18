@@ -135,7 +135,7 @@
 					if (i+1 == charPositionsArray.length && i>0){ charPositionsArray[i] = "and " + charPositionsArray[i]; }
 				}
 				if (charPositionsArray.length > 2) return charPositionsArray.toString().replace(/,/g, ", ");
-				else return charPositionsArray.toString().replace(/,/g, " ");
+				else return charPositionsArray.toString().replace(/>,/g, "> ");
 			}
 			
 			function setSelectionRange(input, selectionStart, selectionEnd) {
