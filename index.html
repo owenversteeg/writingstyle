@@ -131,7 +131,7 @@
 		
 			function formatCharacterPositions(charPositionsArray, bannedTextLength) {
 				for (var i=0; i<charPositionsArray.length; i++) {
-					charPositionsArray[i] = "<a onclick='setSelectionRange(document.getElementById(\'textarea\'), "+charPositionsArray[i]+", "+charPositionsArray[i]+bannedTextLength+")'>"+charPositionsArray[i]+"</a>"
+					charPositionsArray[i] = "<a onclick='setSelectionRange(document.getElementById(\"textarea\"), "+charPositionsArray[i]+", "+charPositionsArray[i]+bannedTextLength+")'>"+charPositionsArray[i]+"</a>"
 				}
 				return charPositionsArray.toString().replace(/,/g, ", ");
 			}
@@ -177,7 +177,7 @@
 			<textarea id="textarea" placeholder="Enter your essay here"></textarea>
 			<br>
 			<button class="btn-a btn-small left" onclick="validateText(document.getElementById(&#39;textarea&#39;).value, options)">Check your essay</button>
-			<button class="btn-b btn-small left" onclick="regenerateInsults(options.notallowed.length)">Regenerate insults</button>
+			<button class="btn-b btn-small left" onclick="regenerateInsults(options.notallowed.length); validateText(document.getElementById('textarea').value, options)">Regenerate insults</button>
 			<br>
 			<div id="insert"></div>
 		</div>
